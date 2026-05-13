@@ -13,5 +13,5 @@ and the DigiLab through various associated nodes.
 ------------------------------------------------------------------------------------
 
 ## Table of contents
-- [MIT License](PROTO2_Projekt/LICENSE)
-- [Description of the Project](PROTO2_Projekt/DESCRIPTION)
+- [MIT License](/LICENSE)
+- [Description of the Project](/DESCRIPTION)
