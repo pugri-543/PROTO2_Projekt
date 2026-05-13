@@ -11,3 +11,7 @@ To accomplish this, we use Node-RED to establish connections between the Discord
 and the DigiLab through various associated nodes.
 
 ------------------------------------------------------------------------------------
+
+## Table of contents
+- [MIT License](PROTO2_Projekt/LICENSE)
+- [Description of the Project](PROTO2_Projekt/DESCRIPTION)
