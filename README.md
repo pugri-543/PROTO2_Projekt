@@ -9,4 +9,5 @@ Our project involves using a Raspberry Pi 5 running Node-RED and a Minecraft ser
 bot and a DigiLab setup.
 To accomplish this, we use Node-RED to establish connections between the Discord bot, the Minecraft server,
 and the DigiLab through various associated nodes.
--------------------------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------
