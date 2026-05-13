@@ -14,4 +14,4 @@ and the DigiLab through various associated nodes.
 
 ## Table of contents
 - [MIT License](/LICENSE)
-- [Description of the Project](/DESCRIPTION)
+- [Description of the Project](/DESCRIPTION.md)
