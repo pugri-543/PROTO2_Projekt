@@ -23,3 +23,11 @@ Server by clicking a button with the label **STOP SERVER**.
 ## - 4 - Discord Bot lottery and Russian Roulette Minigame
 The Discord Bot in this project is used to introduce a lottery and Russian Roulette Minigame in the server, to activate these
 Minegames one must type **/LT** for lottery and **/RR** for russian roulette in the Discord Server.
+
+## - 5 - DigiLab Lever Used to Control Time in Server
+The Lever of the DigiLab will be used to control time in the server, when the signal is 0 the time becomes night, in contrary
+if the signal is 1, it becomes day.
+
+## - 6 - DigiLab Buttons used to give player random Food item
+The DigiLab disposes of two button, the right button will give the player a random meat related food item, and the left button
+gives the player a plant-based food item.
