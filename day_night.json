@@ -1,0 +1,443 @@
+[
+    {
+        "id": "e653664c1c6e5d5a",
+        "type": "tab",
+        "label": "Flow 6",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "acd421b25b905fd3",
+        "type": "rpi-gpio in",
+        "z": "e653664c1c6e5d5a",
+        "name": "",
+        "pin": "16",
+        "intype": "tri",
+        "debounce": "25",
+        "read": false,
+        "bcm": true,
+        "x": 170,
+        "y": 180,
+        "wires": [
+            [
+                "dc7f1df4fc34842d"
+            ]
+        ]
+    },
+    {
+        "id": "3e7ff287fe496bb5",
+        "type": "rpi-gpio in",
+        "z": "e653664c1c6e5d5a",
+        "name": "",
+        "pin": "",
+        "intype": "tri",
+        "debounce": "25",
+        "read": false,
+        "bcm": true,
+        "x": 170,
+        "y": 240,
+        "wires": [
+            [
+                "fc30e7c686237437"
+            ]
+        ]
+    },
+    {
+        "id": "ef946511bd3a79cd",
+        "type": "rpi-gpio in",
+        "z": "e653664c1c6e5d5a",
+        "name": "",
+        "pin": "",
+        "intype": "tri",
+        "debounce": "25",
+        "read": false,
+        "bcm": true,
+        "x": 170,
+        "y": 300,
+        "wires": [
+            [
+                "f29f0d05b6f72827"
+            ]
+        ]
+    },
+    {
+        "id": "dc7f1df4fc34842d",
+        "type": "ui-switch",
+        "z": "e653664c1c6e5d5a",
+        "name": "",
+        "label": "switch",
+        "group": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "className": "",
+        "layout": "row-spread",
+        "clickableArea": "switch",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 350,
+        "y": 180,
+        "wires": [
+            [
+                "73054e91f813b324"
+            ]
+        ]
+    },
+    {
+        "id": "fc30e7c686237437",
+        "type": "ui-switch",
+        "z": "e653664c1c6e5d5a",
+        "name": "",
+        "label": "switch",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "className": "",
+        "layout": "row-spread",
+        "clickableArea": "switch",
+        "onvalue": true,
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": false,
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 350,
+        "y": 240,
+        "wires": [
+            [
+                "f4f832b456809d8a"
+            ]
+        ]
+    },
+    {
+        "id": "f29f0d05b6f72827",
+        "type": "ui-switch",
+        "z": "e653664c1c6e5d5a",
+        "name": "",
+        "label": "switch",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "className": "",
+        "layout": "row-spread",
+        "clickableArea": "switch",
+        "onvalue": true,
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": false,
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 350,
+        "y": 300,
+        "wires": [
+            [
+                "bc2b41b2fdc53fac"
+            ]
+        ]
+    },
+    {
+        "id": "73054e91f813b324",
+        "type": "change",
+        "z": "e653664c1c6e5d5a",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "false",
+                "fromt": "bool",
+                "to": "0",
+                "tot": "num"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "true",
+                "fromt": "bool",
+                "to": "1",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 540,
+        "y": 180,
+        "wires": [
+            [
+                "8a03189b925aa9de"
+            ]
+        ]
+    },
+    {
+        "id": "f4f832b456809d8a",
+        "type": "change",
+        "z": "e653664c1c6e5d5a",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "false",
+                "fromt": "bool",
+                "to": "0",
+                "tot": "num"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "true",
+                "fromt": "bool",
+                "to": "1",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 540,
+        "y": 240,
+        "wires": [
+            [
+                "fd3b5b6e79b46355"
+            ]
+        ]
+    },
+    {
+        "id": "bc2b41b2fdc53fac",
+        "type": "change",
+        "z": "e653664c1c6e5d5a",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "false",
+                "fromt": "bool",
+                "to": "0",
+                "tot": "num"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "true",
+                "fromt": "bool",
+                "to": "1",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 540,
+        "y": 300,
+        "wires": [
+            [
+                "da241b2481a8ef85"
+            ]
+        ]
+    },
+    {
+        "id": "8a03189b925aa9de",
+        "type": "rpi-gpio out",
+        "z": "e653664c1c6e5d5a",
+        "name": "",
+        "pin": "12",
+        "set": "",
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 760,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "fd3b5b6e79b46355",
+        "type": "rpi-gpio out",
+        "z": "e653664c1c6e5d5a",
+        "name": "",
+        "pin": "",
+        "set": "",
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 750,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "da241b2481a8ef85",
+        "type": "rpi-gpio out",
+        "z": "e653664c1c6e5d5a",
+        "name": "",
+        "pin": "",
+        "set": "",
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 750,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "ec07e208375eaf45",
+        "type": "rpi-gpio in",
+        "z": "e653664c1c6e5d5a",
+        "name": "",
+        "pin": "",
+        "intype": "tri",
+        "debounce": "25",
+        "read": false,
+        "bcm": true,
+        "x": 190,
+        "y": 540,
+        "wires": [
+            [
+                "6754434d7b23a719"
+            ]
+        ]
+    },
+    {
+        "id": "9115275a0dde31c4",
+        "type": "rcon",
+        "z": "e653664c1c6e5d5a",
+        "name": "",
+        "server": "46ba04a4c14e5ec1",
+        "command": "",
+        "x": 610,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "18365b2a98119dfe",
+        "type": "rpi-gpio in",
+        "z": "e653664c1c6e5d5a",
+        "name": "",
+        "pin": "",
+        "intype": "tri",
+        "debounce": "25",
+        "read": false,
+        "bcm": true,
+        "x": 190,
+        "y": 660,
+        "wires": [
+            [
+                "d37e8e36f1eb6dd5"
+            ]
+        ]
+    },
+    {
+        "id": "6754434d7b23a719",
+        "type": "change",
+        "z": "e653664c1c6e5d5a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "/time set minecraft:day",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 540,
+        "wires": [
+            [
+                "9115275a0dde31c4"
+            ]
+        ]
+    },
+    {
+        "id": "d37e8e36f1eb6dd5",
+        "type": "change",
+        "z": "e653664c1c6e5d5a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "/time set minecraft:noon",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 660,
+        "wires": [
+            [
+                "9115275a0dde31c4"
+            ]
+        ]
+    },
+    {
+        "id": "46ba04a4c14e5ec1",
+        "type": "serverconfig",
+        "host": "172.17.226.106",
+        "rconPort": 25575,
+        "rconPassword": "change_me"
+    },
+    {
+        "id": "914b8c48af6ea7af",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-node-pi-gpio": "2.0.7",
+            "@flowfuse/node-red-dashboard": "1.29.0",
+            "@tomsith/node-red-contrib-minecraft": "0.7.7"
+        }
+    }
+]
