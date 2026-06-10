@@ -1,0 +1,452 @@
+[
+    {
+        "id": "f6f2187d.f17ca8",
+        "type": "tab",
+        "label": "Dashboard",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "790b9e2272122114",
+        "type": "ui-text",
+        "z": "f6f2187d.f17ca8",
+        "group": "ff120de5b56b7a57",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Weather",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 440,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "1a6a7bc0167a34fc",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 280,
+        "wires": [
+            [
+                "790b9e2272122114",
+                "99d2932650ebfe61"
+            ]
+        ]
+    },
+    {
+        "id": "99d2932650ebfe61",
+        "type": "ui-text",
+        "z": "f6f2187d.f17ca8",
+        "group": "ff120de5b56b7a57",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Player Count",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 450,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "eecb3dcfd0fd0f5c",
+        "type": "ui-button",
+        "z": "f6f2187d.f17ca8",
+        "group": "5caa1428e7907495",
+        "name": "STOP SERVER",
+        "label": "STOP SERVER",
+        "order": 4,
+        "width": "2",
+        "height": "2",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 240,
+        "y": 680,
+        "wires": [
+            [
+                "38c718ecaa9892ac"
+            ]
+        ]
+    },
+    {
+        "id": "38c718ecaa9892ac",
+        "type": "servermanage",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "server": "144ff0c3b623ebcd",
+        "action": "stop",
+        "x": 760,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8f7d7a9dc7f94a58",
+        "type": "ui-text-input",
+        "z": "f6f2187d.f17ca8",
+        "group": "5caa1428e7907495",
+        "name": "",
+        "label": "insert player username",
+        "order": 2,
+        "width": "2",
+        "height": "1",
+        "topic": "payload",
+        "topicType": "msg",
+        "mode": "text",
+        "tooltip": "",
+        "delay": "1",
+        "passthru": true,
+        "sendOnDelay": true,
+        "sendOnBlur": true,
+        "sendOnEnter": true,
+        "className": "",
+        "clearable": true,
+        "sendOnClear": false,
+        "icon": "",
+        "iconPosition": "left",
+        "iconInnerPosition": "inside",
+        "x": 260,
+        "y": 820,
+        "wires": [
+            [
+                "store_player"
+            ]
+        ]
+    },
+    {
+        "id": "store_player",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Store Player",
+        "func": "flow.set('insertedName', msg.payload);\nreturn msg;",
+        "outputs": 0,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "0b22151157bab9b5",
+        "type": "ui-button",
+        "z": "f6f2187d.f17ca8",
+        "group": "5caa1428e7907495",
+        "name": "",
+        "label": "Kick player",
+        "order": 1,
+        "width": "2",
+        "height": "1",
+        "emulateClick": false,
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "payload",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 230,
+        "y": 860,
+        "wires": [
+            [
+                "get_player"
+            ]
+        ]
+    },
+    {
+        "id": "get_player",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Get Player + kick",
+        "func": "msg.payload = \"kick \" + flow.get('insertedName');\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 860,
+        "wires": [
+            [
+                "5dd7a8cb35caec62",
+                "2ec93ed7ccee9399"
+            ]
+        ]
+    },
+    {
+        "id": "5dd7a8cb35caec62",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 730,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "2ec93ed7ccee9399",
+        "type": "rcon",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "server": "144ff0c3b623ebcd",
+        "command": "",
+        "x": 730,
+        "y": 800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6cc4a085099562b5",
+        "type": "comment",
+        "z": "f6f2187d.f17ca8",
+        "name": "KICK PLAYER",
+        "info": "",
+        "x": 240,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "318e21eab52432a6",
+        "type": "comment",
+        "z": "f6f2187d.f17ca8",
+        "name": "STOP SERVER",
+        "info": "",
+        "x": 240,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "96a5c244ba461d6c",
+        "type": "serverinfo",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "server": "144ff0c3b623ebcd",
+        "x": 170,
+        "y": 500,
+        "wires": [
+            [
+                "5a7c1a6408db290a"
+            ]
+        ]
+    },
+    {
+        "id": "5a7c1a6408db290a",
+        "type": "ui-text",
+        "z": "f6f2187d.f17ca8",
+        "group": "ff120de5b56b7a57",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "State of the server",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 470,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "ff120de5b56b7a57",
+        "type": "ui-group",
+        "name": "Server Information",
+        "page": "7d716c5c3314ef0b",
+        "width": "6",
+        "height": "5",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "5caa1428e7907495",
+        "type": "ui-group",
+        "name": "Actions (USE WITH CAUTION)",
+        "page": "7d716c5c3314ef0b",
+        "width": 6,
+        "height": "3",
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "144ff0c3b623ebcd",
+        "type": "serverconfig",
+        "host": "pugri543",
+        "rconPort": 25575,
+        "rconPassword": ""
+    },
+    {
+        "id": "7d716c5c3314ef0b",
+        "type": "ui-page",
+        "name": "SERVER OVERVIEW",
+        "ui": "372dfb207b514b58",
+        "path": "/page1",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "eaa908cf0cc51a48",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "372dfb207b514b58",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": false
+    },
+    {
+        "id": "eaa908cf0cc51a48",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#addbb9",
+            "primary": "#4fab50",
+            "bgPage": "#ad9494",
+            "groupBg": "#6f5252",
+            "groupOutline": "#000000"
+        },
+        "sizes": {
+            "density": "compact",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "9de419e8cd8c3c74",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "@flowfuse/node-red-dashboard": "1.30.2",
+            "@tomsith/node-red-contrib-minecraft": "0.7.7"
+        }
+    }
+]
