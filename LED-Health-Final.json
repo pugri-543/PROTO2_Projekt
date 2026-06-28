@@ -1,0 +1,353 @@
+[
+    {
+        "id": "5f8198ea6f1c1080",
+        "type": "tab",
+        "label": "LED Health",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "b67a920dadade6dc",
+        "type": "inject",
+        "z": "5f8198ea6f1c1080",
+        "d": true,
+        "name": "PugRi",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "0.1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "",
+        "topic": "",
+        "payload": "PugRi",
+        "payloadType": "str",
+        "x": 280,
+        "y": 680,
+        "wires": [
+            [
+                "14f253b02f6e340f"
+            ]
+        ]
+    },
+    {
+        "id": "14f253b02f6e340f",
+        "type": "playerinfo",
+        "z": "5f8198ea6f1c1080",
+        "name": "Player Health",
+        "server": "144ff0c3b623ebcd",
+        "infoType": "health",
+        "player": "@p",
+        "x": 520,
+        "y": 680,
+        "wires": [
+            [
+                "c3c2fe0485122cfb",
+                "9f82651bb04ed6cb"
+            ]
+        ]
+    },
+    {
+        "id": "11d09d1fdbaad7b3",
+        "type": "rpi-gpio out",
+        "z": "5f8198ea6f1c1080",
+        "name": "LD9",
+        "pin": "12",
+        "set": "",
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 1210,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "d0643f1ec786755b",
+        "type": "rpi-gpio out",
+        "z": "5f8198ea6f1c1080",
+        "name": "LD10",
+        "pin": "13",
+        "set": "",
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 1210,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "cf20a3dbeaceef76",
+        "type": "rpi-gpio out",
+        "z": "5f8198ea6f1c1080",
+        "name": "LD11",
+        "pin": "14",
+        "set": "",
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 1210,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "a45848e02e9afc85",
+        "type": "rpi-gpio out",
+        "z": "5f8198ea6f1c1080",
+        "name": "LD12",
+        "pin": "15",
+        "set": "",
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 1210,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "a9c17f19eed34595",
+        "type": "rpi-gpio out",
+        "z": "5f8198ea6f1c1080",
+        "name": "LD13",
+        "pin": "22",
+        "set": "",
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 1210,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "6c3a49f97d9009cf",
+        "type": "rpi-gpio out",
+        "z": "5f8198ea6f1c1080",
+        "name": "LD14",
+        "pin": "17",
+        "set": "",
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 1210,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "5d82ab8225af4039",
+        "type": "rpi-gpio out",
+        "z": "5f8198ea6f1c1080",
+        "name": "LD15",
+        "pin": "18",
+        "set": "",
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 1210,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "c5fc2c3d836a50db",
+        "type": "rpi-gpio out",
+        "z": "5f8198ea6f1c1080",
+        "name": "LD16",
+        "pin": "27",
+        "set": "",
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 1210,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "c3c2fe0485122cfb",
+        "type": "debug",
+        "z": "5f8198ea6f1c1080",
+        "name": "debug 12",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "9f82651bb04ed6cb",
+        "type": "switch",
+        "z": "5f8198ea6f1c1080",
+        "name": "",
+        "property": "payload.value",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "btwn",
+                "v": "1",
+                "vt": "num",
+                "v2": "20",
+                "v2t": "num"
+            },
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 730,
+        "y": 680,
+        "wires": [
+            [
+                "7baa9bda39333ca9"
+            ],
+            [
+                "4dd2e6fcc2102afc"
+            ]
+        ]
+    },
+    {
+        "id": "7baa9bda39333ca9",
+        "type": "change",
+        "z": "5f8198ea6f1c1080",
+        "name": "1",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "1",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 930,
+        "y": 580,
+        "wires": [
+            [
+                "11d09d1fdbaad7b3",
+                "d0643f1ec786755b",
+                "cf20a3dbeaceef76",
+                "a45848e02e9afc85",
+                "a9c17f19eed34595",
+                "6c3a49f97d9009cf",
+                "5d82ab8225af4039",
+                "c5fc2c3d836a50db",
+                "a96c6164991c3ed9"
+            ]
+        ]
+    },
+    {
+        "id": "4dd2e6fcc2102afc",
+        "type": "change",
+        "z": "5f8198ea6f1c1080",
+        "name": "0",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 930,
+        "y": 740,
+        "wires": [
+            [
+                "c5fc2c3d836a50db",
+                "5d82ab8225af4039",
+                "6c3a49f97d9009cf",
+                "a9c17f19eed34595",
+                "a45848e02e9afc85",
+                "cf20a3dbeaceef76",
+                "d0643f1ec786755b",
+                "11d09d1fdbaad7b3",
+                "a96c6164991c3ed9"
+            ]
+        ]
+    },
+    {
+        "id": "a96c6164991c3ed9",
+        "type": "debug",
+        "z": "5f8198ea6f1c1080",
+        "name": "debug 14",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1120,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "b22aec5a471eac6f",
+        "type": "inject",
+        "z": "5f8198ea6f1c1080",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 840,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "144ff0c3b623ebcd",
+        "type": "serverconfig",
+        "host": "pugri543",
+        "rconPort": 25575,
+        "rconPassword": "change_me"
+    },
+    {
+        "id": "8e2d99cd9d0a07fb",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "@tomsith/node-red-contrib-minecraft": "0.7.7",
+            "node-red-node-pi-gpio": "2.0.6"
+        }
+    }
+]

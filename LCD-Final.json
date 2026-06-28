@@ -1,0 +1,511 @@
+[
+    {
+        "id": "4ac4efaae64b5aaf",
+        "type": "tab",
+        "label": "LCD",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "bbe664790f6c2d35",
+        "type": "rcon",
+        "z": "4ac4efaae64b5aaf",
+        "name": "",
+        "server": "144ff0c3b623ebcd",
+        "command": "",
+        "x": 650,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a57d93aeac58f14a",
+        "type": "change",
+        "z": "4ac4efaae64b5aaf",
+        "name": "spectator",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "gamemode spectator @p",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 340,
+        "y": 260,
+        "wires": [
+            [
+                "bbe664790f6c2d35"
+            ]
+        ]
+    },
+    {
+        "id": "08b9bc4eb7c6b031",
+        "type": "inject",
+        "z": "4ac4efaae64b5aaf",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 260,
+        "wires": [
+            [
+                "a57d93aeac58f14a"
+            ]
+        ]
+    },
+    {
+        "id": "677907cb2956e752",
+        "type": "inject",
+        "z": "4ac4efaae64b5aaf",
+        "d": true,
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "PugRi",
+        "payloadType": "str",
+        "x": 100,
+        "y": 440,
+        "wires": [
+            [
+                "dbfb66b2247369f8"
+            ]
+        ]
+    },
+    {
+        "id": "dbfb66b2247369f8",
+        "type": "function",
+        "z": "4ac4efaae64b5aaf",
+        "name": "counter",
+        "func": "let count = flow.get(\"count\") || 0;\n\ncount++;\n\nflow.set(\"count\", count);\n\nmsg.mode = count % 3;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 440,
+        "wires": [
+            [
+                "df34861274cf1370"
+            ]
+        ]
+    },
+    {
+        "id": "df34861274cf1370",
+        "type": "switch",
+        "z": "4ac4efaae64b5aaf",
+        "name": "",
+        "property": "mode",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "2",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 590,
+        "y": 560,
+        "wires": [
+            [
+                "d60757fc5624be44"
+            ],
+            [
+                "d8ab656089e164a8"
+            ],
+            [
+                "de6d5221803f434e"
+            ]
+        ]
+    },
+    {
+        "id": "d60757fc5624be44",
+        "type": "playerinfo",
+        "z": "4ac4efaae64b5aaf",
+        "name": "GM",
+        "server": "144ff0c3b623ebcd",
+        "infoType": "gamemode",
+        "player": "@p",
+        "x": 870,
+        "y": 480,
+        "wires": [
+            [
+                "8aa8135f770f21aa"
+            ]
+        ]
+    },
+    {
+        "id": "d8ab656089e164a8",
+        "type": "playerinfo",
+        "z": "4ac4efaae64b5aaf",
+        "name": "HP",
+        "server": "144ff0c3b623ebcd",
+        "infoType": "health",
+        "player": "@p",
+        "x": 870,
+        "y": 540,
+        "wires": [
+            [
+                "8aa8135f770f21aa"
+            ]
+        ]
+    },
+    {
+        "id": "de6d5221803f434e",
+        "type": "playerinfo",
+        "z": "4ac4efaae64b5aaf",
+        "name": "Hunger",
+        "server": "144ff0c3b623ebcd",
+        "infoType": "food",
+        "player": "@p",
+        "x": 880,
+        "y": 600,
+        "wires": [
+            [
+                "8aa8135f770f21aa"
+            ]
+        ]
+    },
+    {
+        "id": "456f2e1f81581688",
+        "type": "debug",
+        "z": "4ac4efaae64b5aaf",
+        "name": "debug 17",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1540,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "8aa8135f770f21aa",
+        "type": "function",
+        "z": "4ac4efaae64b5aaf",
+        "name": "function 5",
+        "func": "//msg.payload.value;\n//msg.payload.type;\n\n\nif(msg.payload.type === \"gamemode\"){\n    if(msg.payload.value === 0){\n        msg.payload.value = \"Survival\";\n\n    } else if(msg.payload.value === 1){\n        msg.payload.value = \"Creative\";\n\n    } else if (msg.payload.value === 2) {\n        msg.payload.value = \"Adventure\";\n\n    } else if(msg.payload.value === 3){\n        msg.payload.value = \"Spectator\"\n    }\n\n    msg.payload = { \"line1\": msg.payload.type.toUpperCase() + \":\", \"line2\": msg.payload.value};  \n\n} else {\n    msg.payload = { \"line1\": msg.payload.type.toUpperCase() + \":\", \"line2\": (msg.payload.value / 2).toFixed(2) + \" Points\"};\n   \n} \n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1180,
+        "y": 560,
+        "wires": [
+            [
+                "3aa6b642d6b8f94d",
+                "456f2e1f81581688"
+            ]
+        ]
+    },
+    {
+        "id": "51f67e80be0a4f3a",
+        "type": "rcon",
+        "z": "4ac4efaae64b5aaf",
+        "name": "",
+        "server": "144ff0c3b623ebcd",
+        "command": "",
+        "x": 650,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6da94f6723f0b7cb",
+        "type": "change",
+        "z": "4ac4efaae64b5aaf",
+        "name": "survival",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "gamemode survival @p",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 340,
+        "y": 80,
+        "wires": [
+            [
+                "51f67e80be0a4f3a"
+            ]
+        ]
+    },
+    {
+        "id": "743fdb1d74931072",
+        "type": "inject",
+        "z": "4ac4efaae64b5aaf",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 80,
+        "wires": [
+            [
+                "6da94f6723f0b7cb"
+            ]
+        ]
+    },
+    {
+        "id": "1294db9b7f3d2b7d",
+        "type": "rcon",
+        "z": "4ac4efaae64b5aaf",
+        "name": "",
+        "server": "144ff0c3b623ebcd",
+        "command": "",
+        "x": 650,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1a58cf7732a83102",
+        "type": "change",
+        "z": "4ac4efaae64b5aaf",
+        "name": "creative",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "gamemode creative @p",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 340,
+        "y": 140,
+        "wires": [
+            [
+                "1294db9b7f3d2b7d"
+            ]
+        ]
+    },
+    {
+        "id": "0676e39ab1f086c0",
+        "type": "inject",
+        "z": "4ac4efaae64b5aaf",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 140,
+        "wires": [
+            [
+                "1a58cf7732a83102"
+            ]
+        ]
+    },
+    {
+        "id": "f09899d59c54c254",
+        "type": "rcon",
+        "z": "4ac4efaae64b5aaf",
+        "name": "",
+        "server": "144ff0c3b623ebcd",
+        "command": "",
+        "x": 650,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "555002744a8063aa",
+        "type": "change",
+        "z": "4ac4efaae64b5aaf",
+        "name": "adventure",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "gamemode adventure @p",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 340,
+        "y": 200,
+        "wires": [
+            [
+                "f09899d59c54c254"
+            ]
+        ]
+    },
+    {
+        "id": "06f1cd412c3c77c9",
+        "type": "inject",
+        "z": "4ac4efaae64b5aaf",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 200,
+        "wires": [
+            [
+                "555002744a8063aa"
+            ]
+        ]
+    },
+    {
+        "id": "3aa6b642d6b8f94d",
+        "type": "raspi5-lcd-16x2",
+        "z": "4ac4efaae64b5aaf",
+        "name": "",
+        "bus": 1,
+        "address": "0x38",
+        "lcdOn": true,
+        "x": 1560,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "2f71ab9194a8f82b",
+        "type": "comment",
+        "z": "4ac4efaae64b5aaf",
+        "name": "GAMEMODES",
+        "info": "",
+        "x": 100,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "7282caae5125cce2",
+        "type": "comment",
+        "z": "4ac4efaae64b5aaf",
+        "name": "LCD-DISPLAY",
+        "info": "",
+        "x": 100,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "144ff0c3b623ebcd",
+        "type": "serverconfig",
+        "host": "pugri543",
+        "rconPort": 25575,
+        "rconPassword": "change_me"
+    },
+    {
+        "id": "98bd4723a42c566a",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "@tomsith/node-red-contrib-minecraft": "0.7.7",
+            "node-red-contrib-raspi5-lcd-16x2": "0.1.1"
+        }
+    }
+]
