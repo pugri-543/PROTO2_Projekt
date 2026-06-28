@@ -12,7 +12,7 @@ First the player count, second the weather, and finally the gamemode
 
 ## - 2 - DigiLab LEDs represents player's health in-game
 The DigiLab also disposes of 16 LED devided into two groups of 8 which displays the players Health in-game. A Minecraft player
-disposes of 10 hearts so we will have to use one entire group of LEDs plus one LED from the other group.
+disposes of 10 hearts so we will have to use one entire group of LED, each representing two hearts.
 
 ## - 3 - NodeRed dashboard as an overview
 During this project we are also asked to use the NodeRed dashboard nodes, so we are using them to display an overview
