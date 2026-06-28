@@ -3,9 +3,9 @@
 ## - 1 - Displaying player information over DigiLab LCD display screen
 We plan on using our DigiLab LCD-Screen to display certain information of the user, informations involve:
 
-- Player count
-- Server version
-- Gamemode (of the player which executes the command)
+- Player Health (in hearts)
+- Player hunger level
+- Gamemode
 
 Due to the display only having space for two lines of text, we plan on showing a diffrent statistic every 5 seconds in line:
 First the player count, second the weather, and finally the gamemode
