@@ -22,7 +22,7 @@ Server by clicking a button with the label **STOP SERVER**.
 
 ## - 4 - Discord bot lottery and russian roulette minigame
 The Discord Bot in this project is used to introduce a lottery and Russian Roulette Minigame in the server, to activate these
-Minigames one must type **/LT** for lottery and **/RR** for russian roulette in the Discord Server.
+Minigames one must type **LT** for lottery and **RR** for russian roulette in the Discord Server.
 
 ## - 5 - DigiLab lever used to control time in server
 The Lever of the DigiLab will be used to control time in the server, when the signal is 0 the time becomes night, in contrary
