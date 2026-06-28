@@ -10,9 +10,9 @@ We plan on using our DigiLab LCD-Screen to display certain information of the us
 Due to the display only having space for two lines of text, we plan on showing a diffrent statistic every 5 seconds in line:
 First the player count, second the weather, and finally the gamemode
 
-## - 2 - DigiLab LEDs represents player's health in-game
-The DigiLab also disposes of 16 LED devided into two groups of 8 which displays the players Health in-game. A Minecraft player
-disposes of 10 hearts so we will have to use one entire group of LED, each representing two hearts.
+## - 2 - DigiLab LEDs represents player's health state
+The DigiLab also disposes of LEDs, we will use these LEDs to display the players state, if the player died, the LEDs turn off,
+if the player is alive, the LEDs are on.
 
 ## - 3 - NodeRed dashboard as an overview
 During this project we are also asked to use the NodeRed dashboard nodes, so we are using them to display an overview
