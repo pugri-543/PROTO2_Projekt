@@ -4,8 +4,8 @@
 We plan on using our DigiLab LCD-Screen to display certain information of the Minecraft server, informations involve:
 
 - Player count
-- Server weather
-- Gamemode
+- Server version
+- Gamemode (of the player which executes the command)
 
 Due to the display only having space for two lines of text, we plan on showing a diffrent statistic every 5 seconds in line:
 First the player count, second the weather, and finally the gamemode
