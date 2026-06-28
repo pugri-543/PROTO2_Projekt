@@ -1,7 +1,7 @@
 # DESCRIPTION
 
-## - 1 - Displaying server information over DigiLab LCD display screen
-We plan on using our DigiLab LCD-Screen to display certain information of the Minecraft server, informations involve:
+## - 1 - Displaying player information over DigiLab LCD display screen
+We plan on using our DigiLab LCD-Screen to display certain information of the user, informations involve:
 
 - Player count
 - Server version
