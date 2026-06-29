@@ -1,0 +1,361 @@
+[
+    {
+        "id": "49f2a43d22486623",
+        "type": "tab",
+        "label": "Russian roulette",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "b7d32ce6cd95e710",
+        "type": "discordMessage",
+        "z": "49f2a43d22486623",
+        "name": "",
+        "channelIdFilter": "1514216426829779028",
+        "token": "",
+        "x": 200,
+        "y": 180,
+        "wires": [
+            [
+                "d59a05b20d34b947",
+                "ba28ed8b56b50c64"
+            ]
+        ]
+    },
+    {
+        "id": "d59a05b20d34b947",
+        "type": "debug",
+        "z": "49f2a43d22486623",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 540,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "6c7f25eb4f676aa9",
+        "type": "rcon",
+        "z": "49f2a43d22486623",
+        "name": "",
+        "server": "2037340bb3b47cd6",
+        "command": "",
+        "x": 1190,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ba28ed8b56b50c64",
+        "type": "switch",
+        "z": "49f2a43d22486623",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "RR",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 330,
+        "y": 280,
+        "wires": [
+            [
+                "a7929056ce053804"
+            ]
+        ]
+    },
+    {
+        "id": "a7929056ce053804",
+        "type": "function",
+        "z": "49f2a43d22486623",
+        "name": "function 11",
+        "func": "msg.number = Math.floor(Math.random()* 6 - 1 + 1)+ 1\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 240,
+        "y": 520,
+        "wires": [
+            [
+                "3ee7e4505e961ac5",
+                "f7347a33eee4d42e"
+            ]
+        ]
+    },
+    {
+        "id": "3ee7e4505e961ac5",
+        "type": "switch",
+        "z": "49f2a43d22486623",
+        "name": "",
+        "property": "number",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "2",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "3",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "4",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "5",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "6",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 6,
+        "x": 390,
+        "y": 500,
+        "wires": [
+            [
+                "c4713ea1e1879a31"
+            ],
+            [
+                "f053492f8ebcfcef"
+            ],
+            [
+                "0ef4451267e832ad"
+            ],
+            [
+                "f64f6429e98bfed7"
+            ],
+            [
+                "1897d1a2b19e84c8"
+            ],
+            [
+                "25dae24e305bccf5"
+            ]
+        ]
+    },
+    {
+        "id": "f64f6429e98bfed7",
+        "type": "change",
+        "z": "49f2a43d22486623",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 540,
+        "wires": [
+            [
+                "6c7f25eb4f676aa9"
+            ]
+        ]
+    },
+    {
+        "id": "f7347a33eee4d42e",
+        "type": "debug",
+        "z": "49f2a43d22486623",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "number",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 380,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "f053492f8ebcfcef",
+        "type": "change",
+        "z": "49f2a43d22486623",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 420,
+        "wires": [
+            [
+                "6c7f25eb4f676aa9"
+            ]
+        ]
+    },
+    {
+        "id": "c4713ea1e1879a31",
+        "type": "change",
+        "z": "49f2a43d22486623",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "kill @a",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 360,
+        "wires": [
+            [
+                "6c7f25eb4f676aa9"
+            ]
+        ]
+    },
+    {
+        "id": "1897d1a2b19e84c8",
+        "type": "change",
+        "z": "49f2a43d22486623",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 600,
+        "wires": [
+            [
+                "6c7f25eb4f676aa9"
+            ]
+        ]
+    },
+    {
+        "id": "25dae24e305bccf5",
+        "type": "change",
+        "z": "49f2a43d22486623",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 660,
+        "wires": [
+            [
+                "6c7f25eb4f676aa9"
+            ]
+        ]
+    },
+    {
+        "id": "0ef4451267e832ad",
+        "type": "change",
+        "z": "49f2a43d22486623",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 480,
+        "wires": [
+            [
+                "6c7f25eb4f676aa9"
+            ]
+        ]
+    },
+    {
+        "id": "2037340bb3b47cd6",
+        "type": "serverconfig",
+        "host": "dosto615",
+        "rconPort": 25575,
+        "rconPassword": "change_me"
+    },
+    {
+        "id": "595833ddfe8e00d0",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-contrib-discord-advanced": "3.6.0",
+            "@tomsith/node-red-contrib-minecraft": "0.7.7"
+        }
+    }
+]
