@@ -1,0 +1,309 @@
+[
+    {
+        "id": "bc942f0b27240b60",
+        "type": "tab",
+        "label": "Food buttons",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "a2280e131903f420",
+        "type": "rpi-gpio in",
+        "z": "bc942f0b27240b60",
+        "name": "",
+        "pin": "13",
+        "intype": "tri",
+        "debounce": "25",
+        "read": false,
+        "bcm": true,
+        "x": 110,
+        "y": 200,
+        "wires": [
+            [
+                "527537068f6591c6"
+            ]
+        ]
+    },
+    {
+        "id": "a872d85265fcfde6",
+        "type": "rcon",
+        "z": "bc942f0b27240b60",
+        "name": "",
+        "server": "2037340bb3b47cd6",
+        "command": "",
+        "x": 790,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "527537068f6591c6",
+        "type": "change",
+        "z": "bc942f0b27240b60",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "give @a minecraft:enchanted_golden_apple 16",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 340,
+        "y": 200,
+        "wires": [
+            [
+                "a872d85265fcfde6"
+            ]
+        ]
+    },
+    {
+        "id": "dd1c276b894b8aa4",
+        "type": "rpi-gpio in",
+        "z": "bc942f0b27240b60",
+        "name": "",
+        "pin": "12",
+        "intype": "tri",
+        "debounce": "25",
+        "read": false,
+        "bcm": true,
+        "x": 110,
+        "y": 260,
+        "wires": [
+            [
+                "ee07a05d2d9d09f0"
+            ]
+        ]
+    },
+    {
+        "id": "ee07a05d2d9d09f0",
+        "type": "change",
+        "z": "bc942f0b27240b60",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "give @a minecraft:golden_carrot 16",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 340,
+        "y": 260,
+        "wires": [
+            [
+                "a872d85265fcfde6"
+            ]
+        ]
+    },
+    {
+        "id": "ab684007e7f0ae63",
+        "type": "rpi-gpio in",
+        "z": "bc942f0b27240b60",
+        "name": "",
+        "pin": "22",
+        "intype": "tri",
+        "debounce": "25",
+        "read": false,
+        "bcm": true,
+        "x": 110,
+        "y": 360,
+        "wires": [
+            [
+                "d0e2696011eaae05"
+            ]
+        ]
+    },
+    {
+        "id": "d0e2696011eaae05",
+        "type": "change",
+        "z": "bc942f0b27240b60",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "give @a minecraft:cooked_beef 16",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 340,
+        "y": 360,
+        "wires": [
+            [
+                "a872d85265fcfde6"
+            ]
+        ]
+    },
+    {
+        "id": "3a07639007b60db0",
+        "type": "rpi-gpio in",
+        "z": "bc942f0b27240b60",
+        "name": "",
+        "pin": "17",
+        "intype": "tri",
+        "debounce": "25",
+        "read": false,
+        "bcm": true,
+        "x": 110,
+        "y": 420,
+        "wires": [
+            [
+                "3f19a4664f78a087"
+            ]
+        ]
+    },
+    {
+        "id": "3f19a4664f78a087",
+        "type": "change",
+        "z": "bc942f0b27240b60",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "give @a minecraft:bread 16",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 340,
+        "y": 420,
+        "wires": [
+            [
+                "a872d85265fcfde6"
+            ]
+        ]
+    },
+    {
+        "id": "0d0bc803b4037099",
+        "type": "rpi-gpio in",
+        "z": "bc942f0b27240b60",
+        "name": "",
+        "pin": "18",
+        "intype": "tri",
+        "debounce": "25",
+        "read": false,
+        "bcm": true,
+        "x": 110,
+        "y": 480,
+        "wires": [
+            [
+                "a23f65884cd85e28"
+            ]
+        ]
+    },
+    {
+        "id": "a23f65884cd85e28",
+        "type": "change",
+        "z": "bc942f0b27240b60",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "give @a minecraft:melon_slice 16",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 340,
+        "y": 480,
+        "wires": [
+            [
+                "a872d85265fcfde6"
+            ]
+        ]
+    },
+    {
+        "id": "9a0c8078ca60e83a",
+        "type": "rpi-gpio in",
+        "z": "bc942f0b27240b60",
+        "name": "",
+        "pin": "27",
+        "intype": "tri",
+        "debounce": "25",
+        "read": false,
+        "bcm": true,
+        "x": 110,
+        "y": 540,
+        "wires": [
+            [
+                "a2234a52092873fb"
+            ]
+        ]
+    },
+    {
+        "id": "a2234a52092873fb",
+        "type": "change",
+        "z": "bc942f0b27240b60",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "give @a minecraft:cookie 16",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 340,
+        "y": 540,
+        "wires": [
+            [
+                "a872d85265fcfde6"
+            ]
+        ]
+    },
+    {
+        "id": "2037340bb3b47cd6",
+        "type": "serverconfig",
+        "host": "dosto615",
+        "rconPort": 25575,
+        "rconPassword": "change_me"
+    },
+    {
+        "id": "832d3cab965e0d15",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-node-pi-gpio": "2.0.7",
+            "@tomsith/node-red-contrib-minecraft": "0.7.7"
+        }
+    }
+]
