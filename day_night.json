@@ -1,0 +1,144 @@
+[
+    {
+        "id": "e2472b00aa041a48",
+        "type": "tab",
+        "label": "Day / Night",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "49220914eccccd83",
+        "type": "rpi-gpio in",
+        "z": "e2472b00aa041a48",
+        "name": "",
+        "pin": "21",
+        "intype": "tri",
+        "debounce": "25",
+        "read": false,
+        "bcm": true,
+        "x": 130,
+        "y": 140,
+        "wires": [
+            [
+                "4218d2a9c99134c9"
+            ]
+        ]
+    },
+    {
+        "id": "dc266a0ed696fea1",
+        "type": "rcon",
+        "z": "e2472b00aa041a48",
+        "name": "",
+        "server": "2037340bb3b47cd6",
+        "command": "",
+        "x": 810,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0c38301a3730e408",
+        "type": "change",
+        "z": "e2472b00aa041a48",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "/time set minecraft:day",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 540,
+        "y": 80,
+        "wires": [
+            [
+                "dc266a0ed696fea1"
+            ]
+        ]
+    },
+    {
+        "id": "57659cae23a97e56",
+        "type": "change",
+        "z": "e2472b00aa041a48",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "/time set minecraft:night",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 540,
+        "y": 200,
+        "wires": [
+            [
+                "dc266a0ed696fea1"
+            ]
+        ]
+    },
+    {
+        "id": "4218d2a9c99134c9",
+        "type": "switch",
+        "z": "e2472b00aa041a48",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 310,
+        "y": 140,
+        "wires": [
+            [
+                "0c38301a3730e408"
+            ],
+            [
+                "57659cae23a97e56"
+            ]
+        ]
+    },
+    {
+        "id": "2037340bb3b47cd6",
+        "type": "serverconfig",
+        "host": "dosto615",
+        "rconPort": 25575,
+        "rconPassword": "change_me"
+    },
+    {
+        "id": "b38976e603f5e2c9",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-node-pi-gpio": "2.0.7",
+            "@tomsith/node-red-contrib-minecraft": "0.7.7"
+        }
+    }
+]
